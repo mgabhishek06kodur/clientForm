@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>New Client Registration Form</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="img/favicon.gif" type="image/gif" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="css/readMoreFade.css" />
+  <link rel="stylesheet" type="text/css" href="css/toastr.min.css" />
+  <link rel="stylesheet" type="text/css" href="css/validate.css" />
+  <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.10.0/jquery.validate.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/additional-methods.js"></script>
+  <script src="js/readMoreFade.js"></script>
+  <script src="js/jQuery-form-serializer.js"></script>
+  <script src="js/validate.js"></script>
+  <script src="js/toastr.min.js"></script>
+<script src="js/bootbox.min.js"></script>
+<script src="js/jquery.device.detector.js"></script>
+
+</head>
+<body>
+<div class="container">
+		<div class="row" style="background: #F26B31;">
+			<div class="col-sm-12">
+				 <i class="navbar-brand"><img style="margin-top: -12px" src="img/logo.png" /></i>
+			</div>
+		</div>
+		<br/>
+		<h4 class="col-sm-12"> CLIENT INFORMATION </h4>
+		<div class="col-sm-12">
+			<div class="well">
+				<form class="form-horizontal demo-form" id="basicform" name="basicform">
+				<fieldset>
+					<div id="f1" class="frm">
+					<h4 class="col-sm-12">Business Information</h4>
+							<div class="form-group">
+								<div class="col-sm-3">
+									<label class="control-label"> Business Name <span class="required"> *</span></label> <i class="fa fa-question-circle"
+										style="font-size: 20px; color: red" data-toggle="tooltip" title="Exact name as registered with ASIC"> </i>
+								</div>
+								<div class="col-sm-9">
+									<input type="text" class="form-control capital" id="businessName" data-field="businessName" name="businessName" maxlength="100">
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="col-sm-offset-3 col-sm-5">
+									<label><input type="checkbox" name="sameLegalName" id="sameLegalName"> Same as Business Name</label>
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="col-sm-3">
+									<label class="control-label"> Company name on reports<span class="required"> *</span></label>
+								</div>
+								<div class="col-sm-9">
+									<input type="text" class="form-control capital" id="nameOnReport" data-field="nameOnReport" name="nameOnReport" maxlength="100">
+								</div>
+							</div>
+							<div class="form-group">
+							<div class="col-sm-3">
+								<label class="control-label"> Industry Type <span class="required"> *</span></label>
+							</div>
+							<div class="col-sm-4">
+								<select  class="form-control" id="industryType" name="industryType" data-field="industryType">
+									<option value="">--Select--</option>
+								</select>
+							</div>
+							<div class="col-sm-4">
+								<input type="text" class="form-control capital"  style="display:none" id="otherIndustry" data-field="otherIndustry" name="otherIndustry" placeholder="Enter industry type" maxlength="25">
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="col-sm-3">
+								<label class="control-label"> Company Registered in Australia <span class="required"> *</span></label>
+							</div>
+							<div class="col-sm-1">
+								<label><input type="radio" id="registeredInAustralia" name="registeredInAustralia" data-field="registeredInAustralia" class="registeredInAustralia" value="yes" checked /> Yes</label>
+							</div>
+							<div class="col-sm-1">
+								<label><input type="radio" id="registeredInAustralia" name="registeredInAustralia" data-field="registeredInAustralia" class="registeredInAustralia" value="no"/> No</label>
+							</div>
+						</div>
+						<input type="hidden" name="deviceInfo" id="deviceInfo"/>
+						<div class="form-group">
+							<div class="col-sm-3">
+								<label class="control-label"> Business Type <span class="required"> *</span></label>
+							</div>
+							<div class="col-sm-1">
+								<label><input type="radio" id="businessType" name="businessType" data-field="businessType" value="Pty Ltd" checked /> Pty Ltd</label>
+							</div>
+							<div class="col-sm-2">
+								<label><input type="radio" id="businessType" name="businessType" data-field="businessType" value="Public Listed"/> Public Listed</label>
+							</div>
+							<div class="col-sm-2">
+								<label><input type="radio" id="businessType" name="businessType" data-field="businessType" value="Government" /> Government</label>
+							</div>
+							<div class="col-sm-2">
+								<label><input type="radio" id="businessType" name="businessType" data-field="businessType" value="Partnership" /> Partnership</label>
+							</div>
+							<div class="col-sm-2">
+								<label><input type="radio" id="businessType" name="businessType" data-field="businessType" value="Sole Trader"/> Sole Trader</label>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="col-sm-3">
+								<label class="control-label">Business Identification Number<span class="required"> *</span></label>
+							</div>
+							<div class="col-sm-3">
+								<input type="text" class="form-control" id="companyAbn" data-field="companyAbn" name="companyAbn" maxlength="14" placeholder="ABN Number">
+							</div>
+							<div class="col-sm-1">
+								<label class="control-label">ACN</label>
+							</div>
+							<div class="col-sm-3">
+								<input type="text" class="form-control" id="companyAcn" data-field="companyAcn" name="companyAcn" maxlength="9">
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="col-sm-3">
+								<label class="control-label"> Director's Name</label>
+							</div>
+							<div class="col-sm-9">
+								<input type="text" class="form-control capital" id="directorName" data-field="directorName" name="directorName" maxlength="25">
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="col-sm-10" id="result" style="color:red">
+							</div>
+						</div>
+						<div class="form-group">
+							<button class="btn btn-primary open1 pull-right" type="button">Next <span class="fa fa-arrow-right"></span></button>
+							<button class="btn btn-success pull-right" id="open1WaitButton" disabled> Processing information, please wait.. <i class="fa fa-spinner fa-spin"></i></button>
+						</div>
+					</div>
+				</fieldset>
+				<fieldset>
+					<div id="f2" class="frm">
+					<h4 class="col-sm-12">Business and Postal Address</h4>
+					<div id ="subBusinessAddressDiv">
+						<div class="form-group">
+							<div class="col-sm-2">
+								<label class="control-label"> Business Address <span class="required"> *</span></label>
+							</div>
+							<div class="col-sm-4">
+								<input type="text" class="form-control capital" id="businessAddress" data-field="businessAddress" name="businessAddress" placeholder="Address" maxlength="50">
+							</div>
+							<div class="col-sm-2">
+								<input type="text" class="form-control capital" id="businessAddressSuburb" data-field="businessAddressSuburb" name="businessAddressSuburb" placeholder="Suburb" maxlength="10">
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="col-sm-offset-2 col-sm-2">
+								<select  class="form-control" id="businessAddressCountry" data-field="businessAddressCountry" name="businessAddressCountry">
+								</select>
+							</div>
+							<div class="col-sm-2" id="businessDropdownState">
+								<select  class="form-control" id="businessAddressState" data-field="businessAddressState" name="businessAddressState">
+								</select>
+							</div>
+							<div class="col-sm-2" style="display:none" id="businessTextState">
+								<input type="text"  class="form-control capital" id="businessAddressOtherState" data-field="businessAddressState" name="businessAddressState" placeholder="Enter State" maxlength="25">
+							</div>
+							<div class="col-sm-2">
+								<input type="text" class="form-control" id="businessAddressPcode" data-field="businessAddressPcode" name="businessAddressPcode" placeholder="Postal Code" maxlength="10">
+							</div>
+						</div>
+						</div>
+						<input type="hidden" name="companyName" id="companyName"/>
+						<input type="hidden" name="status" id="status"/>
+						<div class="form-group">
+							<div class="col-sm-offset-2 col-sm-5">
+							<label><input type="checkbox" name="sameAddress" id="sameAddress" > Same as Business Address</label>
+							</div>
+						</div>
+						<div id="subPostalAddressDiv">
+						<div class="form-group" >
+							<div class="col-sm-2">
+								<label class="control-label"> Postal Address </label>
+							</div>
+							<div class="col-sm-4">
+								<input type="text" class="form-control capital" id="postalAddress" data-field="postalAddress" name="postalAddress" placeholder="Address" maxlength="50">
+							</div>
+							<div class="col-sm-2">
+								<input type="text" class="form-control capital" id="postalAddressSuburb" data-field="postalAddressSuburb" name="postalAddressSuburb" placeholder="Suburb" maxlength="20">
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="col-sm-offset-2 col-sm-2">
+								<select  class="form-control" id="postalAddressCountry" data-field="postalAddressCountry" name="postalAddressCountry">
+								</select>
+							</div>
+							<div class="col-sm-2" id="postalDropdownState">
+								<select  class="form-control" id="postalAddressState" data-field="postalAddressState" name="postalAddressState">
+								</select>
+							</div>
+							<div class="col-sm-2" style="display:none;" id="postalTextState">
+								<input type="text"  class="form-control capital" placeholder=" Enter State" id="postalAddressOtherState" data-field="postalAddressState" name="postalAddressState" maxlength="25">
+							</div>
+							<div class="col-sm-2">
+								<input type="text" class="form-control" id="postalAddressPcode"  data-field="postalAddressPcode" name="postalAddressPcode" placeholder="Postal Code" maxlength="10">
+							</div>
+						</div>
+						</div>
+						<div class="form-group">
+							<button class="btn btn-warning back2 pull-left" type="button"><span class="fa fa-arrow-left"></span> Previous</button>
+							<button class="btn btn-primary open2 pull-right" type="button">Next <span class="fa fa-arrow-right"></span></button>
+						</div>
+					</div>
+				</fieldset>
+				<fieldset>
+				<div id="f3" class="frm">
+					<h4 class="col-sm-12">Contact Details </h4>
+					<div id="subAccountContactDiv">
+						<div class="form-group">
+							<div class="col-sm-2">
+								<label class="control-label">Acccount Contact </label>
+							</div>
+							<div class="col-sm-3">
+								<input type="text" class="form-control capital" id="accountsContactFirstName" data-field="accountsContactFirstName" name="accountsContactFirstName" placeholder="Name" maxlength="25">
+							</div>
+							<div class="col-sm-3">
+								<input type="text" class="form-control capital" id="accountsContactLastName" data-field="accountsContactLastName" name="accountsContactLastName"  placeholder="Surname" maxlength="25">
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="col-sm-3 col-sm-offset-2">
+								<input type="text" class="form-control" id="accountsContactEmail" data-field="accountsContactEmail" name="accountsContactEmail" placeholder="Email" maxlength="50">
+							</div>
+							<div class="col-sm-3">
+								<input type="text" class="form-control" id="accountsContactMobile" data-field="accountsContactMobile" name="accountsContactMobile" placeholder="Mobile" maxlength="13">
+							</div>
+						</div>
+					<div class="form-group">
+							<div class="col-sm-2 col-sm-offset-2">
+								<select  class="form-control" id="accountsContactCountryCode" data-field="accountsContactCountryCode" name="accountsContactCountryCode">
+								</select>
+							</div>
+							<div class="col-sm-2">
+								<input type="text" class="form-control" id="accountsContactAreaCode" data-field="accountsContactAreaCode" name="accountsContactAreaCode" placeholder="Area code" maxlength="4">
+							</div>
+							<div class="col-sm-2">
+								<input type="text" class="form-control" id="accountsContactPhoneNumber" data-field="accountsContactPhoneNumber" name="accountsContactPhoneNumber" placeholder="Phone Number" maxlength="10">
+							</div>
+					</div>
+					</div>
+					<div class="form-group">
+							<div class="col-sm-5 col-sm-offset-2">
+							<label><input type="checkbox" name="sameContact" id="sameContact" > Same as Above</label>
+							</div>
+					</div>
+					
+					<div id="subWorkContactDiv">
+						<div class="form-group">
+							<div class="col-sm-2">
+								<label class="control-label">Work/Job Contact </label>
+							</div>
+							<div class="col-sm-3">
+								<input type="text" class="form-control capital" id="workContactFirstName" data-field="workContactFirstName" name="workContactFirstName"  placeholder="Name" maxlength="50">
+							</div>
+							<div class="col-sm-3">
+								<input type="text" class="form-control capital"  id="workContactLastName" data-field="workContactLastName" name="workContactLastName" placeholder="Surname" maxlength="25">
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="col-sm-3 col-sm-offset-2">
+								<input type="text" class="form-control" id="workContactEmail" data-field="workContactEmail" name="workContactEmail" placeholder="Email" maxlength="50">
+							</div>
+							<div class="col-sm-3">
+								<input type="text" class="form-control" id="workContactMobile" data-field="workContactMobile" name="workContactMobile" placeholder="Mobile" maxlength="13">
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="col-sm-2 col-sm-offset-2">
+								<select  class="form-control" id="workContactCountryCode" data-field="workContactCountryCode" name="workContactCountryCode">
+								</select>
+							</div>
+							<div class="col-sm-2">
+								<input type="text" class="form-control" id="workContactAreaCode" data-field="workContactAreaCode" name="workContactAreaCode" placeholder="Area code" maxlength="4">
+							</div>
+							<div class="col-sm-2">
+								<input type="text" class="form-control" id="workContactPhoneNumber" data-field="workContactPhoneNumber" name="workContactPhoneNumber" placeholder="Phone Number" maxlength="10">
+							</div>
+					</div>
+					<div class="form-group">
+					<div class="col-sm-2">
+					<label for="lastName" class="control-label">Email Statements to
+								 <sup style="color: red">*</sup>
+							</label>
+					</div>
+							
+							<div class="col-sm-3">
+								<input type="text" id="statementsEmail" name="statementsEmail" data-field="statementsEmail"
+									class="form-control">
+							</div>
+							<div class="col-sm-5">
+								<label><input type="checkbox" name="statementsEmailExists" id="statementsEmailExists"> Same as Accounts ID</label>
+							</div>
+						</div>
+						
+						<div class="form-group">
+							<div class="col-sm-2">
+								<label class="control-label">Email job confirmation<span class="required"> *</span></label>
+							</div>
+							<div class="col-sm-1">
+								<label><input type="radio" id="jobConfirmationEmail" name="jobConfirmationEmail" data-field="jobConfirmationEmail" class="jobConfirmationEmail" value="yes" checked /> Yes</label>
+							</div>
+							<div class="col-sm-1">
+								<label><input type="radio" id="jobConfirmationEmail" name="jobConfirmationEmail" data-field="jobConfirmationEmail" class="jobConfirmationEmail" value="no"/> No</label>
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<button class="btn btn-warning back3 pull-left" type="button"><span class="fa fa-arrow-left"></span> Previous</button>
+
+						<button class="btn btn-primary open3 pull-right" type="button">Next <span class="fa fa-arrow-right"></span></button>
+					</div>
+				</div>
+				</fieldset>
+				<div id="f4" class="frm">
+					<h4 class="col-sm-12">References <em>(Current supplier's details)</em></h4>
+					<div class="form-group">
+						<div class="col-sm-2">
+							<label class="control-label"> Company Names</label>
+							<i class="fa fa-question-circle" style="font-size:20px;color:red" data-toggle="tooltip" title="Provide your current suppliers details (Mandatory for non-public listed companies)"> </i>
+						</div>
+						<div class="col-sm-9">
+							<input type="text" class="form-control capital" id="supplierName" data-field="supplierName" name="supplierName" maxlength="100">
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-sm-2">
+							<label class="control-label"> Address</label>
+						</div>
+						<div class="col-sm-4">
+							<input type="text" class="form-control capital" id="supplierAddress" data-field="supplierAddress" name="supplierAddress" placeholder="Address" maxlength="50">
+						</div>
+						<div class="col-sm-2">
+							<input type="text" class="form-control capital" id="supplierAddressSuburb" data-field="supplierAddressSuburb" name="supplierAddressSuburb"placeholder="Suburb" maxlength="50">
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-sm-offset-2 col-sm-2">
+							<select  class="form-control" id="supplierAddressCountry" data-field="supplierAddressCountry" name="supplierAddressCountry">
+
+							</select>
+						</div>
+						<div class="col-sm-2" id="supplierDropdownState">
+								<select  class="form-control" id="supplierAddressState" data-field="supplierAddressState" name="supplierAddressState">
+								</select>
+						</div>
+						<div class="col-sm-2" style="display:none;" id="supplierTextState">
+								<input type="text"  class="form-control capital" placeholder="Enter State" data-field="supplierAddressState" id="supplierAddressOtherState" name="supplierAddressState" maxlength="25">
+							</div>
+						<div class="col-sm-2">
+							<input type="text" class="form-control" id="supplierAddressPcode" data-field="supplierAddressPcode" name="supplierAddressPcode" placeholder="Postcode" maxlength="10">
+						</div>
+					</div>
+					<div class="form-group">
+						<button class="btn btn-warning back4 pull-left" type="button"><span class="fa fa-arrow-left"></span> Previous</button>
+
+						<button class="btn btn-primary open4 pull-right" type="button">Next <span class="fa fa-arrow-right"></span></button>
+					</div>
+				</div>
+				<div id="f5" class="frm">
+					<h4 class="col-sm-12">Please read the following Terms and Conditions before clicking the Submit button  on</h4>
+						<div class="form-group" id="tncDiv">
+							<ol id="fadeMe">
+							</ol>
+						</div>
+						<div class="form-group">
+						<div class="col-sm-12">
+							<label>
+							<input name="tc" data-field="tc" id="tc" type="checkbox"><span class="required"> I have read, understood and agree with the above stated terms and conditions.</span><label>
+						</div>
+						</div>
+						<div class="form-group">
+						<button class="btn btn-warning back5 pull-left" type="button"><span class="fa fa-arrow-left"></span> Previous</button>
+						<button class="btn btn-success open5  pull-right" type="submit">Submit <span class="fa fa-paper-plane"></span></button>
+						<button class="btn btn-success pull-right" id="waitButton"> Please wait.. <i class="fa fa-spinner fa-spin"></i></button>
+						</div>
+				</div>
+					<div id="f6" class="frm">
+						<div class="form-group">
+							<div class="col-sm-12">
+							<p>Thank you for submitting your information.</p>
+									<p>
+										One of the LMATS staff will verify your information and
+										approve your details to be included in our OMS - Operations
+										&amp; Management System to provide you most efficient
+										services.<br/> The suplied details will be managed
+										securely and it will be used in relation to your Job and
+										future correspondence in relation to the previously completed
+										work.
+									</p>
+									<p>You may close this browser tab now.</p>
+							</div>
+							</div>
+						</div>
+						<div id="f7" class="frm">
+							<div class="form-group">
+								<div class="col-sm-12">
+								<p>Thank you for submitting your information.</p>
+										<p>
+											Mail not sent. Please write an Email to <em>admin@lmats.com.au</em> 
+										</p>
+										<p>You may close this browser tab now.</p>
+								</div>
+							</div>
+						</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
